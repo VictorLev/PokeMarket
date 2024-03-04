@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_04_050052) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_04_062009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pokemons", force: :cascade do |t|
     t.string "nickname"
     t.integer "age"
-    t.decimal "rating", precision: 2, scale: 4
+    t.decimal "rating", precision: 2, scale: 1
     t.bigint "user_id", null: false
     t.string "element"
     t.string "name"
