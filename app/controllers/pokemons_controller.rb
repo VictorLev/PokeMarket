@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.first(10)
+    @pokemons = Pokemon.all
   end
 
   def new
@@ -22,5 +22,4 @@ class PokemonsController < ApplicationController
   def pokemon_params
     params.require(:pokemon).permit(:nickname, :age, :rating, :element, :name)
   end
-
 end
