@@ -1,81 +1,25 @@
 <div class="card-container">
-    <div class="card-gradient-gold-border">
-      <%# @pokemons.each do |pokemon| %>
-      <h3>Pokemon name<%#= pokemon.name %></h3>
-      <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <div class="card-gradient-gold-border-content">
-        <div>
-          <p> Element: <%#= pokemon.element %></p>
-          <p> Age:<%#= pokemon.age %></p>
-          <p> Rent: $$$ </p>
-        </div>
-        <%# end %>
-        <div class="card-gradient-gold-border-avatar">
+  <% @pokemons.each do |pokemon| %>
+    <%= link_to pokemon_path(pokemon), class: "decorator-none" do %>
+      <div class="card-gradient-gold-border mb-4">
+        <h3><%= pokemon.name %></h3>
+        <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
         <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
         <%#= requires cloudinary gem and an image to be attached to the  user %>
-          <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
+        <div class="card-gradient-gold-border-content">
+          <div>
+            <p> Element: <%= pokemon.element %></p>
+            <p> Age:<%= pokemon.age %></p>
+            <p> Rent: $$$ </p>
+          </div>
+
+          <div class="card-gradient-gold-border-avatar">
+          <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
+          <%#= requires cloudinary gem and an image to be attached to the  user %>
+            <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
+          </div>
         </div>
       </div>
-    </div>
-      <div class="card-gradient-gold-border">
-      <%# @pokemons.each do |pokemon| %>
-      <h3>Pokemon name<%#= pokemon.name %></h3>
-      <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <div class="card-gradient-gold-border-content">
-        <div>
-          <p> Element: <%#= pokemon.element %></p>
-          <p> Age:<%#= pokemon.age %></p>
-          <p> Rent: $$$ </p>
-        </div>
-        <%# end %>
-        <div class="card-gradient-gold-border-avatar">
-        <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-        <%#= requires cloudinary gem and an image to be attached to the  user %>
-          <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
-        </div>
-      </div>
-    </div>
-      <div class="card-gradient-gold-border">
-      <%# @pokemons.each do |pokemon| %>
-      <h3>Pokemon name<%#= pokemon.name %></h3>
-      <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <div class="card-gradient-gold-border-content">
-        <div>
-          <p> Element: <%#= pokemon.element %></p>
-          <p> Age:<%#= pokemon.age %></p>
-          <p> Rent: $$$ </p>
-        </div>
-        <%# end %>
-        <div class="card-gradient-gold-border-avatar">
-        <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-        <%#= requires cloudinary gem and an image to be attached to the  user %>
-          <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
-        </div>
-      </div>
-    </div>
-      <div class="card-gradient-gold-border">
-      <%# @pokemons.each do |pokemon| %>
-      <h3>Pokemon name<%#= pokemon.name %></h3>
-      <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <div class="card-gradient-gold-border-content">
-        <div>
-          <p> Element: <%#= pokemon.element %></p>
-          <p> Age:<%#= pokemon.age %></p>
-          <p> Rent: $$$ </p>
-        </div>
-        <%# end %>
-        <div class="card-gradient-gold-border-avatar">
-        <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-        <%#= requires cloudinary gem and an image to be attached to the  user %>
-          <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
-        </div>
-      </div>
-    </div>
+    <% end %>
+  <% end %>
+</div>
