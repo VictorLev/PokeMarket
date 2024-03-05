@@ -6,5 +6,34 @@
       <img class="title" src="pokemarket.png" alt="pokemarket graphic">
    </div>
 </div>
-
-<%= render partial: "card_grid" %>
+<div class="container">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="find a pokemon" aria-label="pokemon search" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Search</button>
+    </div>
+  </div>
+</div>
+<div class="card-container">
+  <% @pokemons.where(featured: "true").each do |pokemon|%>
+        <div class="card-gradient-border gold-lightning">
+          <h3><%= pokemon.name %></h3>
+          <%#= requires pokemon image from the API %>
+          <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
+          <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
+          <%#= requires cloudinary gem and an image to be attached to the  user %>
+          <div class="card-gradient-border-content">
+          <div>
+            <p> Element: <%= pokemon.element %></p>
+            <p> Age:<%= pokemon.age %></p>
+            <p> Rent: $$$ </p>
+          </div>
+          <%# <div class="card-gradient-gold-border-avatar"> %>
+          <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
+          <%#= requires cloudinary gem and an image to be attached to the  user %>
+          <%# <img class="avatar" src="pokemon-trainer.webp" alt="avatar"> %>
+          </div>
+        </div>
+      <%# </li> %>
+    <% end %>
+</div>
