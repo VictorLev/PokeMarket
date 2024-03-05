@@ -6,20 +6,40 @@
 }
 
 
-.card-white {
-  width: 250px;
-  height: 300px;
+.card-gradient-gold-border {
+  width: 240px;
+  height: 290px;
   background-color: rgb(255, 255, 255);
   box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.399);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  padding: 12px;
+  border-style: outset;
+  border-width: thick;
+  border-color: goldenrod;
+  background-image: linear-gradient(to bottom right, rgba(250, 151, 3, 0.895), rgba(255, 255, 86, 0.773));
 }
 
-.card-white-content {
-
-
-}
-.card-white img {
+.card-gradient-gold-border .pokemon-img {
   overflow: hidden;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+
+.card-gradient-gold-border h3, p {
+  margin: 0px !important;
+}
+
+.card-gradient-gold-border-content {
+  display: flex;
+  position: relative;
+}
+
+.card-gradient-gold-border-avatar {
+  position: absolute;
+  top: 20%;
+  right: 0;
 }
