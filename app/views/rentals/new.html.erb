@@ -1,0 +1,7 @@
+<h1>Rentals#new</h1>
+<%= simple_form_for(@rental) do |f| %>
+  <%= f.input :status %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>

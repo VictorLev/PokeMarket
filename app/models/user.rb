@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pokemon, dependent: :destroy
+  has_many :rental, dependent: :destroy
 end
