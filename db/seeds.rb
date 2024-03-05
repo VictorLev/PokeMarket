@@ -11,7 +11,7 @@
 require "json"
 require "open-uri"
 
-url = "https://pokeapi.co/api/v2/pokemon/?limit=150"
+url = "https://pokeapi.co/api/v2/pokemon/?limit=30"
 pokemon_serialized = URI.open(url).read
 api_return = JSON.parse(pokemon_serialized)
 
@@ -34,5 +34,11 @@ api_return["results"].each do |pokemon|
   url = pokemon["url"]
   pokemon_serialized = URI.open(url).read
   api_return = JSON.parse(pokemon_serialized)
-  Pokemon.create!(nickname: pokemon["name"], age: rand(1..30), rating: rand(1...10), element: api_return["types"][0]["type"]["name"], name: pokemon["name"], user: User.all.sample)
+  Pokemon.create!(nickname: pokemon["name"],
+                  age: rand(1..30),
+                  rating: rand(1...10),
+                  element: api_return["types"][0]["type"]["name"],
+                  name: pokemon["name"],
+                  user: User.all.sample,
+                  featured: [true, false].sample)
 end
