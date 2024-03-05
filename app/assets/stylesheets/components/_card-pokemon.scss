@@ -1,0 +1,66 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 16px 26px 16px 26px
+}
+
+.card-gradient-border {
+  width: 240px;
+  height: 290px;
+  box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.399);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin: 12px;
+  border-style: outset;
+  border-width: thick;
+  &.red-fire {
+    border-color: firebrick;
+    background-image: linear-gradient(to bottom right, rgba(250, 3, 3, 0.895), rgba(245, 80, 176, 0.773));
+  }
+  &.blue-water {
+    border-color: darkblue;
+    background-image: linear-gradient(to bottom right, rgba(7, 3, 78, 0.895), rgba(80, 182, 245, 0.773));
+  }
+  &.green-poison {
+    border-color: darkolivegreen ;
+    background-image: linear-gradient(to bottom right, rgba(33, 79, 39, 0.895), rgba(94, 200, 90, 0.773));
+  }
+  &.gold-lightning {
+    border-color: goldenrod;
+    background-image: linear-gradient(to bottom right, rgba(250, 151, 3, 0.895), rgba(255, 255, 86, 0.773));
+  }
+}
+
+// .red-fire {}
+
+// .blue-water {}
+
+// .green-poison { }
+
+// .gold-lightning { }
+
+.card-gradient-border .pokemon-img {
+  overflow: hidden;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+
+.card-gradient-border h3, p {
+  margin: 0px !important;
+}
+
+.card-gradient-border-content {
+  display: flex;
+  position: relative;
+}
+
+.card-gradient-border-avatar {
+  position: absolute;
+  top: 20%;
+  right: 0;
+}
