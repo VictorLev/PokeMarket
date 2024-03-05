@@ -1,5 +1,5 @@
-<h1>Rentals#new</h1>
-<%= simple_form_for(@rental) do |f| %>
+
+<%= simple_form_for [@pokemon, @rental] do |f| %>
   <%= f.input :status %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
