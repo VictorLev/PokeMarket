@@ -1,25 +1,14 @@
-<h1>Pokemons#show</h1>
-
-<div class="Pokemon">
+<div class="container">
+<div class="card-show">
   <img src="" />
   <div class="card-product-infos">
+   <%= render partial: 'pages/card', locals: { pokemon: @pokemon } %>
     <h2><%= @pokemon.nickname %></h2>
     <h2><%= @pokemon.age %></h2>
     <h2><%= @pokemon.rating %></h2>
     <h2><%= @pokemon.element %></h2>
     <h2><%= @pokemon.name %></h2>
-
-    <%# <h2>age</h2>
-    <h2>rating</h2>
-    <h2>element </h2>
-    <h2>name</h2>
-
-    <%= @pokemon.rating %>
-    <%#
-    @pokemon.age
-    @pokemon.element
-    @pokemon.name %>
-
+    </div>
     <p>Product description with <strong>relevant info</strong> only.</p>
   </div>
 </div>
