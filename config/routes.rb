@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get "/account", to: "pages#account"
 
-  resources :pokemons, only: [:index, :create, :new] do
+  resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
   end
 
