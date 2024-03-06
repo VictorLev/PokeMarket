@@ -13,7 +13,7 @@
     <div class="card-gradient-gold-border-avatar">
     <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
     <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <img class="avatar" src="pokemon-trainer.webp" alt="avatar">
+      <img class="avatar" src=<%= current_user.imageUrl %> alt="avatar">
     </div>
   </div>
 </div>

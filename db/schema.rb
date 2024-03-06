@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_05_050853) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_004823) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_050853) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "featured", default: false
+    t.string "coordinates"
+    t.string "imageUrl"
     t.index ["user_id"], name: "index_pokemons_on_user_id"
   end
 
@@ -77,6 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_05_050853) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "imageUrl"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
