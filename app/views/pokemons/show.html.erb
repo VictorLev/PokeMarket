@@ -1,16 +1,15 @@
 <div class="container">
-<div class="card-show <%= link_to "See More", "#", class: "btn btn-primary" %>">
-  <img src="" />
-  <div class="card-product-infos">
-   <%= render partial: 'pages/card', locals: { pokemon: @pokemon } %>
-    <h2><%= @pokemon.nickname %></h2>
-    <h2><%= @pokemon.age %></h2>
-    <h2><%= @pokemon.rating %></h2>
-    <h2><%= @pokemon.element %></h2>
-    <h2><%= @pokemon.name %></h2>
+  <div class="d-flex justify-content-center">
+    <div class="card-show">
+      <div class="card-product-infos">
+        <%= render partial: 'pages/card', locals: { pokemon: @pokemon } %>
+        <h2><%= @pokemon.nickname %></h2>
+        <h2><%= @pokemon.age %></h2>
+        <h2><%= @pokemon.rating %></h2>
+        <h2><%= @pokemon.element %></h2>
+        <h2><%= @pokemon.name %></h2>
+      </div>
+      <p>Product description with <strong>relevant info</strong> only.</p>
     </div>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-    <%= link_to "Back", "pokemon", class: "btn btn-secondary" %>
-
   </div>
 </div>
