@@ -1,18 +1,15 @@
-<div class="card-gradient-gold-border mb-4">
+<div class="card-gradient-border gold-lightning">
   <h3><%= pokemon.name %></h3>
-  <img class="pokemon-img" src="pikachu.png" alt="pikachu image" height="66%">
-  <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-  <%#= requires cloudinary gem and an image to be attached to the  user %>
-  <div class="card-gradient-gold-border-content">
+  <%#= get pokemon image from the API %>
+  <img class="pokemon-img" src=<%=pokemon.imageUrl%> alt="pokemon image" height="66%">
+  <div class="card-gradient-border-content">
     <div>
       <p> Element: <%= pokemon.element %></p>
       <p> Age:<%= pokemon.age %></p>
-      <p> Rent: $$$ </p>
+      <p> Rent:  </p>
     </div>
-
-    <div class="card-gradient-gold-border-avatar">
-    <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-    <%#= requires cloudinary gem and an image to be attached to the  user %>
+    <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img requires an image to be attached to the  user %>
+    <div class="card-gradient-border-avatar">
       <img class="avatar" src=<%= current_user.imageUrl %> alt="avatar">
     </div>
   </div>
