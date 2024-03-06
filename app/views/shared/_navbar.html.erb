@@ -12,6 +12,12 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "My pokemon" , my_pokemon_path , class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Create a pokemon" , new_pokemon_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Pokedeck", pokemons_path, class: "nav-link" %>
             </li>
           <li class="nav-item">
