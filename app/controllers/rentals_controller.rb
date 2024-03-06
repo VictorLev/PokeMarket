@@ -12,16 +12,16 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new( **rental_params, pokemon: @pokemon, user: current_user)
     if @rental.save
-      redirect_to pokemon_rentals_path(@pokemon)
+      redirect_to pokemon_path(@pokemon), notice: 'Rental was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render partial: "rentals/new", status: :unprocessable_entity, locals: { pokemon: @pokemon }
     end
   end
 
   def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
-    redirect_to pokemon_rentals_path(@rental.pokemon), status: :see_other
+    redirect_to account_path, status: :see_other
   end
 
   private

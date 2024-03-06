@@ -8,9 +8,6 @@
           <%= rental.start_date %>
           <%= rental.end_date %>
         </div>
-        <%= link_to rental_path(rental), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-x"></i>
-        <% end%>
       </div>
     <% end %>
   </div>

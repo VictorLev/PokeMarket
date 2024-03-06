@@ -1,0 +1,11 @@
+
+<%= simple_form_for [@pokemon, @rental] do |f| %>
+  <%= f.input :status %>
+  <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.submit %>
+<% end %>

@@ -1,16 +1,24 @@
 <div class="container">
-<div class="card-show <%= link_to "See More", "#", class: "btn btn-primary" %>">
-  <img src="" />
-  <div class="card-product-infos">
-   <%= render partial: 'pages/card', locals: { pokemon: @pokemon } %>
-    <h2><%= @pokemon.nickname %></h2>
-    <h2><%= @pokemon.age %></h2>
-    <h2><%= @pokemon.rating %></h2>
-    <h2><%= @pokemon.element %></h2>
-    <h2><%= @pokemon.name %></h2>
+  <div class="d-flex justify-content-center ">
+    <div class="card-show w-50">
+      <div class="card-product-infos d-flex justify-content-center">
+        <%= render partial: 'pages/card', locals: { pokemon: @pokemon } %>
+      </div>
+      <div class="p-4">
+        <h2> Rentals </h2>
+        <%= render partial: 'rentals/index', locals: { pokemon: @pokemon } %>
+      </div>
+      <div data-controller="toggle" class="">
+        <div class="d-flex justify-content-center mb-5">
+          <button data-action="click->toggle#fire" class="btn btn-outline-primary">Rent this <%= @pokemon.name %> </button>
+        </div>
+        <div data-toggle-target="togglableElement" class="d-none">
+          <div class="p-4 border rounded-4 my-4">
+            <h2> New Rental </h2>
+            <%= render partial: 'rentals/new', locals: { pokemon: @pokemon } %>
+          </div>
+        </div>
+      </div>
     </div>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-    <%= link_to "Back", "pokemon", class: "btn btn-secondary" %>
-
   </div>
 </div>
