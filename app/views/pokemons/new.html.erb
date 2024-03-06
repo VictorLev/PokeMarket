@@ -1,34 +1,64 @@
-<h1>Pokemons#snew</h1>
+<div class="text-center m-5">
+<h1><strong>Create a Pokemon</strong></h1>
+</div>
+<div class="container text-center">
 <%= form_for(@pokemon) do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2">
+        <%= f.label :name, class: "form-label" %>
+      </div>
+      <div class="col-md-4 mb-2">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :element %>
-    <%= f.text_field :element %>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2">
+        <%= f.label :element, class: "form-label" %>
+      </div>
+      <div class="col-md-4 mb-2">
+        <%= f.text_field :element, class: "form-control" %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :age %>
-    <%= f.number_field :age %>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2 ">
+        <%= f.label :age, class: "form-label" %>
+      </div>
+      <div class="col-md-4 mb-2">
+        <%= f.number_field :age, class: "form-control" %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :nickname %>
-    <%= f.text_field :nickname %>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2">
+        <%= f.label :nickname, class: "form-label" %>
+      </div>
+      <div class="col-md-4 mb-2">
+        <%= f.text_field :nickname, class: "form-control" %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :rating %>
-    <%= f.number_field :rating %>
-  </div>
-  <div>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-2">
+        <%= f.label :rating, class: "form-label" %>
+      </div>
+      <div class="col-md-4 mb-2">
+        <%= f.number_field :rating, class: "form-control" %>
+      </div>
+    </div>
+  <div class= "m-4">
     <%= f.submit %>
   </div>
 <% end %>
-
-
-<%#  <%= f.input :nickname %>
-  <%# <%= f.input :age %>
-  <%# <%= f.input :rating %>
-  <%# <%= f.input :element %>
-  <%# <%= f.input :name %>
-  <%# <%= f.submit %>
+</div>
+</div>
