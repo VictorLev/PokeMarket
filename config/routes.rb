@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/account", to: "pages#account"
+  get "/my-pokemon", to: "pages#my_pokemon", as: "my_pokemon"
 
   resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
