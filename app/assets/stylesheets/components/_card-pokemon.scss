@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 16px 26px 16px 26px
+  margin: 16px 26px 16px 26px;
 }
 
 .card-gradient-border {
@@ -18,8 +18,8 @@
   border-width: thick;
   opacity: 0.9;
   &.fire {
-    border-color: goldenrod;
-    background-image: linear-gradient(to bottom left, rgb(176, 0, 0), rgba(255, 70, 70, 0.868));
+    border-color: silver;
+    background: linear-gradient(45deg, rgb(143, 0, 0), rgb(255, 0, 0), rgb(143, 0, 0));
   }
   &.psychic {
     border-color: silver;
@@ -27,43 +27,47 @@
   }
   &.water {
     border-color: silver;
-    background-image: linear-gradient(to bottom left, rgba(7, 3, 78, 0.715), rgba(80, 182, 245, 0.773));
+    background: linear-gradient(45deg, rgb(144, 229, 240), rgb(7, 3, 78));
   }
   &.fairy {
     border-color: silver;
-    background-image: linear-gradient(to bottom left, rgba(151, 18, 120, 0.878), rgba(253, 178, 223, 0.878));
+    background: linear-gradient(45deg, rgb(253, 178, 223), rgb(151, 18, 120), rgb(253, 178, 223));
   }
   &.poison {
     border-color: silver ;
-    background-image: linear-gradient(to bottom left, rgba(120, 0, 118, 0.924), rgba(200, 0, 183, 0.87));
+    background-image: linear-gradient(to bottom left, rgb(120, 0, 118), rgb(200, 0, 183));
   }
   &.ghost {
     border-color: silver ;
-    background-image: linear-gradient(to bottom left, rgba(95, 40, 141, 0.778), rgba(175, 89, 225, 0.835));
+    background-image: linear-gradient(to bottom left, rgb(45, 19, 67), rgb(201, 128, 243));
   }
   &.bug {
     border-color: silver;
-    background-image: linear-gradient(to bottom left, rgba(128, 154, 0, 0.895),rgba(208, 255, 0, 0.842));
+    background-image: linear-gradient(to bottom left, rgb(128, 154, 0), rgb(208, 255, 0));
   }
   &.grass {
     border-color: silver;
-    background-image: linear-gradient(to bottom left, rgba(25, 77, 3, 0.895), rgba(54, 211, 6, 0.773));
+    background-image: linear-gradient(to bottom left, black, rgb(25, 77, 3), rgb(54, 211, 6));
   }
   &.normal {
-    border-color: silver;
-    background-image: linear-gradient(to bottom left, rgba(0, 149, 154, 0.878), rgba(0, 251, 235, 0.848));
+    border-color: goldenrod;
+    background-image: linear-gradient(to bottom left, rgb(200, 89, 170), rgb(255, 212, 212), rgb(238, 198, 0), );
   }
   &.rock {
     border-color: silver ;
-    background-image: linear-gradient(to bottom right, rgba(138, 137, 137, 0.892), rgba(246, 246, 246, 0.854));
+    background-image: linear-gradient(to bottom left, rgb(138, 137, 137), rgb(246, 246, 246));
   }
   &.ground {
     border-color: goldenrod ;
-    background-image: linear-gradient(to bottom left, rgba(226, 94, 0, 0.895), rgba(255, 136, 0, 0.773));
+    background-image: linear-gradient(to bottom left, rgb(226, 94, 0), rgb(255, 136, 0));
   }
   &.electric {
     border-color: goldenrod;
-    background-image: linear-gradient(to bottom left, rgba(255, 162, 0, 0.8),rgb(237, 237, 83));
+    background-image: linear-gradient(to bottom left, rgb(251, 255, 188), rgb(255, 230, 0), orange);
+  }
+  &.fighting {
+    border-color: goldenrod;
+    background-image: linear-gradient(to bottom left, rgb(32, 26, 15), rgb(160, 77, 0));
   }
 }
 
@@ -75,7 +79,7 @@
   border-style: solid;
   border-width: thin;
   border-color: black;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.724);
 }
 
 .card-gradient-border h3, p {
