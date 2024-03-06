@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @pokemons = Pokemon.where(featured: "true")
+    if params[:query].present?
+      @pokemons = Pokemon.where("name LIKE ?", "%#{params[:query][:name]}%")
+    else
+      @pokemons = Pokemon.where(featured: "true")
+    end
   end
 
   def account
