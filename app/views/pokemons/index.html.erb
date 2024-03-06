@@ -4,20 +4,5 @@
 </div>
 
 <div class="card-container">
-  <% @pokemons.each do |pokemon|%>
-    <div class="card-gradient-border <%= pokemon.element %>">
-      <h3><%= pokemon.name %></h3>
-      <img class="pokemon-img" src=<%=pokemon.imageUrl%> alt="pokemon image" height="66%">
-      <div class="card-gradient-border-content">
-        <div>
-          <p> Element: <%= pokemon.element %></p>
-          <p> Age: <%= pokemon.age %></p>
-          <p> Rent: $$$ </p>
-        </div>
-        <div class="card-gradient-border-avatar">
-          <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'search_index', locals: { pokemons: @pokemons } %>
 </div>
