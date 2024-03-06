@@ -1,7 +1,7 @@
 <div class="card-container">
   <% @pokemons.each do |pokemon| %>
     <%= link_to pokemon_path(pokemon), class: "decorator-none" do %>
-      <%= render partial: 'card', locals: { pokemon: @pokemon } %>
+      <%= render partial: 'card', locals: { pokemon: pokemon } %>
     <% end %>
   <% end %>
 </div>

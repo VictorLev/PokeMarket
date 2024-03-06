@@ -18,24 +18,5 @@
 </div>
 
 <div class="card-container">
-  <% @pokemons.each do |pokemon|%>
-    <div class="card-gradient-border gold-lightning">
-      <h3><%= pokemon.name %></h3>
-      <%#= requires pokemon image from the API %>
-      <img class="pokemon-img" src=<%=pokemon.imageUrl%> alt="pokemon image" height="66%">
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <div class="card-gradient-border-content">
-        <div>
-          <p> Element: <%= pokemon.element %></p>
-          <p> Age:<%= pokemon.age %></p>
-          <p> Rent:  </p>
-        </div>
-      <%# <div class="card-gradient-gold-border-avatar"> %>
-      <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img %>
-      <%#= requires cloudinary gem and an image to be attached to the  user %>
-      <%# <img class="avatar" src="pokemon-trainer.webp" alt="avatar"> %>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'card_grid', locals: { pokemons: @pokemons } %>
 </div>
