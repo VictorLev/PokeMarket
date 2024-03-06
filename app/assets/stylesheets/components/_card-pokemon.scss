@@ -16,31 +16,48 @@
   margin: 12px;
   border-style: outset;
   border-width: thick;
-  &.red-fire {
+  &.fire {
     border-color: firebrick;
-    background-image: linear-gradient(to bottom right, rgba(250, 3, 3, 0.895), rgba(245, 80, 176, 0.773));
+    background-image: linear-gradient(to bottom right, rgba(250, 3, 3, 0.895), rgba(255, 9, 9, 0.773));
   }
-  &.blue-water {
+
+  &.water {
     border-color: darkblue;
     background-image: linear-gradient(to bottom right, rgba(7, 3, 78, 0.895), rgba(80, 182, 245, 0.773));
   }
-  &.green-poison {
-    border-color: darkolivegreen ;
-    background-image: linear-gradient(to bottom right, rgba(33, 79, 39, 0.895), rgba(94, 200, 90, 0.773));
+
+  &.poison {
+    border-color: purple ;
+    background-image: linear-gradient(to bottom right, rgba(143, 67, 142, 0.895), rgba(206, 90, 197, 0.773));
   }
-  &.gold-lightning {
+
+  &.grass {
+    border-color: green ;
+    background-image: linear-gradient(to bottom right, rgba(38, 130, 50, 0.895),rgba(35, 204, 30, 0.773));
+  }
+
+  &.bug {
+    border-color: rgb(77, 77, 77) ;
+    background-image: linear-gradient(to bottom right, rgba(150, 150, 150, 0.895),rgba(230, 230, 230, 0.773));
+  }
+
+  &.normal {
+    border-color: white ;
+    background-image: linear-gradient(to bottom right, rgba(230, 230, 230, 0.895), rgba(246, 246, 246, 0.773));
+  }
+
+  &.ground {
+    border-color: brown ;
+    background-image: linear-gradient(to bottom right, rgba(184, 88, 20, 0.895), rgba(203, 133, 20, 0.773));
+  }
+
+  &.electric {
     border-color: goldenrod;
-    background-image: linear-gradient(to bottom right, rgba(250, 151, 3, 0.895), rgba(255, 255, 86, 0.773));
+    background-image: linear-gradient(to bottom right, rgba(252, 213, 39, 0.895),rgb(255, 223, 78));
   }
 }
 
-// .red-fire {}
 
-// .blue-water {}
-
-// .green-poison { }
-
-// .gold-lightning { }
 
 .card-gradient-border .pokemon-img {
   overflow: hidden;
