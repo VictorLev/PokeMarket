@@ -16,44 +16,54 @@
   margin: 12px;
   border-style: outset;
   border-width: thick;
+  opacity: 0.9;
   &.fire {
-    border-color: firebrick;
-    background-image: linear-gradient(to bottom right, rgba(250, 3, 3, 0.895), rgba(255, 9, 9, 0.773));
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgb(176, 0, 0), rgba(255, 70, 70, 0.868));
   }
-
+  &.psychic {
+    border-color: silver;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+  }
   &.water {
-    border-color: darkblue;
-    background-image: linear-gradient(to bottom right, rgba(7, 3, 78, 0.895), rgba(80, 182, 245, 0.773));
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgba(7, 3, 78, 0.715), rgba(80, 182, 245, 0.773));
   }
-
+  &.fairy {
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgba(151, 18, 120, 0.878), rgba(253, 178, 223, 0.878));
+  }
   &.poison {
-    border-color: purple ;
-    background-image: linear-gradient(to bottom right, rgba(143, 67, 142, 0.895), rgba(206, 90, 197, 0.773));
+    border-color: silver ;
+    background-image: linear-gradient(to bottom left, rgba(120, 0, 118, 0.924), rgba(200, 0, 183, 0.87));
   }
-
-  &.grass {
-    border-color: green ;
-    background-image: linear-gradient(to bottom right, rgba(38, 130, 50, 0.895),rgba(35, 204, 30, 0.773));
+  &.ghost {
+    border-color: silver ;
+    background-image: linear-gradient(to bottom left, rgba(95, 40, 141, 0.778), rgba(175, 89, 225, 0.835));
   }
-
   &.bug {
-    border-color: rgb(77, 77, 77) ;
-    background-image: linear-gradient(to bottom right, rgba(150, 150, 150, 0.895),rgba(230, 230, 230, 0.773));
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgba(128, 154, 0, 0.895),rgba(208, 255, 0, 0.842));
   }
-
+  &.grass {
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgba(25, 77, 3, 0.895), rgba(54, 211, 6, 0.773));
+  }
   &.normal {
-    border-color: white ;
-    background-image: linear-gradient(to bottom right, rgba(230, 230, 230, 0.895), rgba(246, 246, 246, 0.773));
+    border-color: silver;
+    background-image: linear-gradient(to bottom left, rgba(0, 149, 154, 0.878), rgba(0, 251, 235, 0.848));
   }
-
+  &.rock {
+    border-color: silver ;
+    background-image: linear-gradient(to bottom right, rgba(138, 137, 137, 0.892), rgba(246, 246, 246, 0.854));
+  }
   &.ground {
-    border-color: brown ;
-    background-image: linear-gradient(to bottom right, rgba(184, 88, 20, 0.895), rgba(203, 133, 20, 0.773));
+    border-color: goldenrod ;
+    background-image: linear-gradient(to bottom left, rgba(226, 94, 0, 0.895), rgba(255, 136, 0, 0.773));
   }
-
   &.electric {
     border-color: goldenrod;
-    background-image: linear-gradient(to bottom right, rgba(252, 213, 39, 0.895),rgb(255, 223, 78));
+    background-image: linear-gradient(to bottom left, rgba(255, 162, 0, 0.8),rgb(237, 237, 83));
   }
 }
 
@@ -70,6 +80,7 @@
 
 .card-gradient-border h3, p {
   margin: 0px !important;
+  text-shadow: 1px;
 }
 
 .card-gradient-border-content {
