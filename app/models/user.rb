@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PgSearch::Model
 
   has_one_attached :photo
   # Include default devise modules. Others available are:
@@ -8,4 +9,6 @@ class User < ApplicationRecord
 
   has_many :pokemon, dependent: :destroy
   has_many :rental, dependent: :destroy
+
+  multisearchable against: [:username, :hometown]
 end
