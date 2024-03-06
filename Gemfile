@@ -80,3 +80,6 @@ group :test do
 end
 
 gem "devise"
+
+# search function
+gem "pg_search"
