@@ -3,10 +3,15 @@ class Pokemon < ApplicationRecord
   belongs_to :user
   has_many :rental, dependent: :destroy
 
-  # include PgSearch::Model
-  # pg_search_scope :search_by_name_and_element,
-  #   against: [ :name, :element ],
-  #   using: {
-  #   tsearch: { prefix: true }
-  # }
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :element ],
+    associated_against: {
+      user: [:username]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
+  multisearchable against: [:name, :element, :rating]
 end

@@ -1,6 +1,10 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.order(:name)
+    if params[:query].present?
+      @pokemons = Pokemon.search_by_name_and_element(params[:query])
+    else
+      @pokemons = Pokemon.order(:name)
+    end
   end
 
   def new

@@ -15,11 +15,18 @@
   <div class="row justify-content-center">
     <div class="col-sm-11">
       <div id="pokemons">
-        <% if @pokemons.any? %>
-           <%= render partial: 'shared/card_grid', locals: { pokemons: @pokemons } %>
-        <% else %>
-          <em>Sorry, no pokemon found.</em>
-        <% end %>
+        <% if @results.any? %>
+        <% @results.each do |result| %>
+          <% record = result.searchable %>
+          <%= record.name %>
+          <%= record.element %>
+          <%= record.searchable_type %>
+          <%# update here with the user information and add polymorphic references to the migration and to the models %>
+          <%#= render partial: 'card_grid', locals: { pokemons: @pokemons } %>
+
+          <% else %>
+            <em>Sorry, no pokemon found.</em>
+          <% end %>
       </div>
     </div>
   </div>
