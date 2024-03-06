@@ -9,6 +9,8 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    @rental = Rental.new
+    @rentals = Rental.where(pokemon: @pokemon)
   end
 
   def create
