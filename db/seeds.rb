@@ -11,7 +11,7 @@
 require "json"
 require "open-uri"
 
-url = "https://pokeapi.co/api/v2/pokemon/?limit=30"
+url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
 pokemon_serialized = URI.open(url).read
 api_return = JSON.parse(pokemon_serialized)
 

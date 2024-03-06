@@ -7,19 +7,21 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <ul class="navbar-nav me-auto">
+       <li class="nav-item active">
+          <%= link_to "Pokedeck", pokemons_path, class: "nav-link" %>
+      </li>
+    </ul>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "New pokemon" , new_pokemon_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "My pokemon" , my_pokemon_path , class: "nav-link" %>
           </li>
-          <li class="nav-item active">
-            <%= link_to "Create a pokemon" , new_pokemon_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Pokedeck", pokemons_path, class: "nav-link" %>
-            </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
