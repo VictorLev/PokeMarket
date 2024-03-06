@@ -8,15 +8,8 @@
    </div>
 </div>
 
-<div class="container">
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="find a pokemon" aria-label="pokemon search" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Search</button>
-    </div>
-  </div>
-</div>
+<%= render partial: 'search', locals: { pokemons: @pokemons } %>
 
-<div class="card-container">
+<%# <div class="card-container">
   <%= render partial: 'card_grid', locals: { pokemons: @pokemons } %>
-</div>
+<%# </div> %> 
