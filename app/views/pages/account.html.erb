@@ -1,0 +1,42 @@
+<div class="container my-4">
+  <div class="my-4">
+    <h2>
+      Personal Information
+    </h2>
+    <div class="list-group">
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Hometown</h5>
+        </div>
+        <p class="mb-1"><%= @user.hometown %></p>
+      </div>
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Username</h5>
+        </div>
+        <p class="mb-1"><%= @user.username %></p>
+      </div>
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Email</h5>
+        </div>
+        <p class="mb-1"><%= @user.email %></p>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="my-4">
+    <h2>
+      Rentals
+    </h2>
+    <div class="list-group">
+      <% @rentals.each do |rental| %>
+        <div>
+          <%= rental.start_date %>
+          <%= rental.end_date %>
+          <%= rental.status_date %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

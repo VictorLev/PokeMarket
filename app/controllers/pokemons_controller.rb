@@ -7,6 +7,10 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new
   end
 
+  def show
+    @pokemon = Pokemon.find(params[:id])
+  end
+
   def create
     @pokemon = Pokemon.new( **pokemon_params, user: current_user)
     @pokemon.save

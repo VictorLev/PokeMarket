@@ -1,4 +1,17 @@
-# /pokemons/:id/rentals
-<% @rentals.each do |rental| %>
-<%= rental.rental %>
-<%end %>
+<div class="container">
+  <%# /pokemons/:id/rentals %>
+  <div class="group-list">
+    <% @rentals.each do |rental| %>
+      <div class="d-flex justify-content-between">
+        <div class="group-list-item">
+          <%= rental.status %>
+          <%= rental.start_date %>
+          <%= rental.end_date %>
+        </div>
+        <%= link_to rental_path(rental), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-solid fa-x"></i>
+        <% end%>
+      </div>
+    <% end %>
+  </div>
+</div>
