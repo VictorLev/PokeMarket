@@ -1,6 +1,6 @@
 class PokemonsController < ApplicationController
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.order(:name)
   end
 
   def new
