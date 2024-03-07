@@ -4,12 +4,12 @@
 // Downloaded fonts
 @font-face {
   font-family: "PocketMonk";
-  src: url("../fonts/PocketMonk-15ze.ttf");
+  src: font-url('PocketMonk-15ze.ttf');
 }
 
 @font-face {
   font-family: "ARCADECLASSIC";
-  src: url("../fonts/ARCADECLASSIC.TTF");
+  src: font-url('ARCADECLASSIC.ttf');
 }
 
 // Define fonts for body and headers
