@@ -7,6 +7,14 @@ class PokemonsController < ApplicationController
     else
       @pokemons = Pokemon.order(:name)
     end
+    @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {pokemon: pokemon}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def new
