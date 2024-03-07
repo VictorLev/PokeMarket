@@ -11,14 +11,9 @@ Rails.application.routes.draw do
   get "/my-pokemon", to: "pages#my_pokemon", as: "my_pokemon"
   get "/my-rentals", to: "pages#my_rentals", as: "my_rentals"
 
-  get '/search', to: 'search#search', as: :search
-
   resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
   end
 
   resources :rentals, only: [:destroy, :update, ]
-
-  # Defines search path for later - to search through users as well as pokemon
-  get '/search', to: 'search#search', as: :search
 end
