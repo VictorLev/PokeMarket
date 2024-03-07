@@ -77,7 +77,7 @@ api_return["results"].each do |pokemon|
                   name: pokemon["name"],
                   user: User.all.sample,
                   featured: [true, false].sample,
-                  coordinates: "[#{rand(-30..-20)}, #{rand(130..140)}]",
+                  address: Faker::Address.full_address,
                   imageUrl: api_return["sprites"]["front_default"]
                   )
 end
