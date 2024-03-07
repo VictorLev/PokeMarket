@@ -83,3 +83,10 @@ gem "devise"
 
 # search function
 gem "pg_search"
+
+# map funtion
+gem "geocoder"
+
+# faker seed addresses
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+

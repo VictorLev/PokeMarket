@@ -3,7 +3,11 @@ require 'open-uri'
 class Pokemon < ApplicationRecord
   before_validation :fetch_img_url
   belongs_to :user
+  
   has_many :rentals, dependent: :destroy
+  
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def unavailable_dates
     self.rentals.pluck(:start_date, :end_date).map do |range|
