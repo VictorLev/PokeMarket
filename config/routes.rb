@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   get "/account", to: "pages#account"
   get "/my-pokemon", to: "pages#my_pokemon", as: "my_pokemon"
-  
-  get '/search', to: 'search#search', as: :search
 
   resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
@@ -18,6 +16,6 @@ Rails.application.routes.draw do
 
   resources :rentals, only: [:destroy]
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Defines search path for later - to search through users as well as pokemon
+  get '/search', to: 'search#search', as: :search
 end
