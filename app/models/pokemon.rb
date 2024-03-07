@@ -1,13 +1,16 @@
+require 'open-uri'
+
 class Pokemon < ApplicationRecord
-  has_one_attached :photo
+  before_validation :fetch_img_url
   belongs_to :user
-  has_many :rental, dependent: :destroy
+  
+  has_many :rentals, dependent: :destroy
   
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
   def unavailable_dates
-    self.rental.pluck(:start_date, :end_date).map do |range|
+    self.rentals.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
     end
   end
@@ -24,4 +27,18 @@ class Pokemon < ApplicationRecord
     }
 
   multisearchable against: [:name, :element, :rating]
+
+  private
+
+  def fetch_img_url
+    # Call the api using name of Pokemon
+    url = "https://pokeapi.co/api/v2/pokemon/#{self.name}/"
+    pokemon_serialized = URI.open(url).read
+    api_return = JSON.parse(pokemon_serialized)
+    # Grab the imgUrl and add as attribute to the Pokemon
+    img_url = api_return["sprites"]["front_default"]
+    self.imageUrl = img_url
+  rescue
+    errors.add(:base, "This pokemon does not exist...")
+  end
 end

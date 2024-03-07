@@ -7,8 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :pokemon, dependent: :destroy
-  has_many :rental, dependent: :destroy
+  has_many :pokemons, dependent: :destroy
+  has_many :rentals, dependent: :destroy
 
   multisearchable against: [:username, :hometown]
 end

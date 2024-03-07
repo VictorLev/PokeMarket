@@ -70,6 +70,7 @@ api_return["results"].each do |pokemon|
   url = pokemon["url"]
   pokemon_serialized = URI.open(url).read
   api_return = JSON.parse(pokemon_serialized)
+
   Pokemon.create!(nickname: pokemon["name"],
                   age: rand(1..30),
                   rating: rand(1...10),

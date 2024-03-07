@@ -6,11 +6,12 @@ class RentalsController < ApplicationController
   end
 
   def new
-    @rental = Rental.new(status: "pending")
+    @rental = Rental.new()
   end
 
   def create
-    @rental = Rental.new( **rental_params, pokemon: @pokemon, user: current_user)
+
+    @rental = Rental.new( **rental_params, pokemon: @pokemon, user: current_user, status: "pending")
     if @rental.save
       redirect_to pokemon_path(@pokemon), notice: 'Rental was successfully created.'
     else
@@ -21,7 +22,13 @@ class RentalsController < ApplicationController
   def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
-    redirect_to account_path, status: :see_other
+    redirect_to my_rentals_path, status: :see_other
+  end
+
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(status: "approved")
+    redirect_to approvals_path, status: :see_other
   end
 
   private
@@ -31,6 +38,6 @@ class RentalsController < ApplicationController
   end
 
   def rental_params
-    params.require(:rental).permit(:status, :start_date, :end_date)
+    params.require(:rental).permit(:start_date, :end_date)
   end
 end
