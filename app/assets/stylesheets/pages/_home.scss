@@ -1,12 +1,22 @@
 // Specific CSS for your home-page
 .title {
-  width: 800px;
+  margin-top: 68px;
+  width: 100%;
 }
+
+.featured h1 {
+  transform: rotate(-8deg);
+  text-align: left;
+}
+
 .billboard {
   width: fit-content;
   margin-bottom: 126px;
 }
 
+.billboard2 {
+  width: 100%;
+}
 
 .footer {
   background: #F4F4F4;

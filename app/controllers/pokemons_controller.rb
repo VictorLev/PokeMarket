@@ -1,7 +1,9 @@
 class PokemonsController < ApplicationController
   def index
+    @pokemons = Pokemon.all
     if params[:query].present?
-      @pokemons = Pokemon.search_by_name_and_element(params[:query])
+      sql_subquery = "name ILIKE :query OR element ILIKE :query"
+      @pokemons = Pokemon.where(sql_subquery,  query: "%#{params[:query]}%")
     else
       @pokemons = Pokemon.order(:name)
     end

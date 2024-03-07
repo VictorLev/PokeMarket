@@ -1,15 +1,33 @@
-<div class="billboard container-fluid position-relative">
+<%= render partial: 'billboard', locals: { pokemons: @pokemons } %>
 
-    <div>
-      <%= image_tag("https://cdn.toucharcade.com/wp-content/uploads/2016/07/landscape-1456483171-pokemon2.jpg") %>
-    </div>
-    <div class="position-absolute top-100 start-50 translate-middle">
-      <img class="title" src="pokemarket.png" alt="pokemarket graphic">
-   </div>
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for available pokemon"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
 
-<%= render partial: 'search', locals: { pokemons: @pokemons } %>
+<div class="featured container">
+  <h1>Featured Pokemon</h1>
+</div>
+
+
+<%#= render partial: 'shared/card_grid', locals: { pokemons: @pokemons } %>
+<div class="cotnainter" style="margin-top: 24px;">
+  <%= render partial: 'search', locals: { pokemons: @pokemons } %>
+</div>
+
+
+
+
 
 <%# <div class="card-container">
   <%= render partial: 'card_grid', locals: { pokemons: @pokemons } %>
-<%# </div> %> 
+<%# </div> %>

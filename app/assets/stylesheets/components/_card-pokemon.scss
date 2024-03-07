@@ -84,7 +84,6 @@
 
 .card-gradient-border h3, p {
   margin: 0px !important;
-  text-shadow: 1px;
 }
 
 .card-gradient-border-content {
@@ -99,5 +98,9 @@
 }
 
 .card-gradient-border h3 {
+  font-family: "ARCADECLASSIC";
   font-weight: bold;
+  letter-spacing: 2px;
+  color: rgb(248, 235, 235);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.559);
 }

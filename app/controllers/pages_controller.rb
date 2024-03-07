@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @pokemons = Pokemon.all
     if params[:query].present?
       sql_subquery = "name ILIKE :query OR element ILIKE :query"
       @pokemons = Pokemon.where(sql_subquery,  query: "%#{params[:query]}%")
