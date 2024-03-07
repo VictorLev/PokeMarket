@@ -21,12 +21,12 @@
             <div class="list-group">
               <div class="list-group-item list-group-item-dark fs-3"> Nickname: <%= @pokemon.nickname.capitalize %> </div>
               <div class="list-group-item"> Pokemon: <%= @pokemon.name.capitalize %> </div>
-              <div class="list-group-item"> Rating: <%= @pokemon.rating %> </div>
+              <div class="list-group-item"> Rating: <%= @pokemon.rating %> ⭐ </div>
               <div class="list-group-item"> Element: <%= @pokemon.element %> </div>
               <% if @pokemon.featured %>
                 <div class="list-group-item"> Featured </div>
               <% end %>
-              <div class="list-group-item"> Coordinates: <%= @pokemon.coordinates %> </div>
+              <div class="list-group-item"> Address: <%= @pokemon.address %> </div>
             </div>
           </div>
         </div>
@@ -45,4 +45,7 @@
         </div>
     </div>
   </div>
+  <button>
+    <%= link_to("back", pokemons_path) %>
+  </button>
 </div>

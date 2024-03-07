@@ -77,7 +77,7 @@ api_return["results"].each do |pokemon|
                   name: pokemon["name"],
                   user: User.all.sample,
                   featured: [true, false].sample,
-                  address: Faker::Address.full_address,
+                  address: ["Sydney, NSW, Australia", "Melbourne, VIC, Australia", "Brisbane, QLD, Australia"].sample,
                   imageUrl: api_return["sprites"]["front_default"]
                   )
 end
