@@ -14,12 +14,12 @@
         <% end %>
 
         <%= f.input :name do %>
-          <%= f.collection_select :name, Pokemon.all, :id, :name, { prompt: "Select a name" }, { class: "form-control" } %>
+        <%= f.collection_select :name, Pokemon.order(:name), :id, :name, { prompt: "Select a name" }, { class: "form-control" } %>
         <% end %>
         <%= f.input :element %>
         <%= f.input :age %>
         <%= f.input :nickname %>
-        <%= f.input :rating %>
+        <%= f.input :rating, placeholder: "Write a rating between 0 and 5"%>
         <%= f.button :submit, "Create Pokemon", class: "btn btn-primary" %>
       <% end %>
     </div>
