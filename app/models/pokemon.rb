@@ -3,10 +3,10 @@ require 'open-uri'
 class Pokemon < ApplicationRecord
   before_validation :fetch_img_url
   belongs_to :user
-  has_many :rental, dependent: :destroy
+  has_many :rentals, dependent: :destroy
 
   def unavailable_dates
-    self.rental.pluck(:start_date, :end_date).map do |range|
+    self.rentals.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
     end
   end

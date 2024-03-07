@@ -12,10 +12,18 @@ class PagesController < ApplicationController
 
   def account
     @user = current_user
-    @rentals = @user.rental
+    @rentals = @user.rentals
   end
 
   def my_pokemon
-    @pokemons = current_user.pokemon
+    @pokemons = current_user.pokemons
+  end
+
+  def my_rentals
+    @rentals = current_user.rentals
+  end
+
+  def approvals
+    @rentals = Rental.joins(:pokemon).where(pokemon: current_user.pokemons, rentals: { status: "pending" })
   end
 end

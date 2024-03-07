@@ -24,23 +24,4 @@
       </div>
     </div>
   </div>
-  <hr/>
-  <div class="my-4">
-    <h2>
-      Rentals
-    </h2>
-    <div class="list-group">
-      <% @rentals.each do |rental| %>
-        <div>
-          <%= rental.pokemon.name %> :
-          <%= rental.start_date %>
-          <%= rental.end_date %>
-          <%= rental.status %>
-          <%= link_to rental_path(rental), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fa-x"></i>
-          <% end%>
-        </div>
-      <% end %>
-    </div>
-  </div>
 </div>

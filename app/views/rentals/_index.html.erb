@@ -1,11 +1,12 @@
 <div class="container">
   <div class="list-group">
-    <% @rentals.each do |rental| %>
-      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "" %>">
+    <% pokemon.rentals.each do |rental| %>
+      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "list-group-item-success" %>">
         <%= rental.status %><br/>
         From : <%= rental.start_date.strftime("%A, %B %e, %Y") %><br/>
         To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
       </div>
     <% end %>
+    <%= pokemon.rentals == [] ? "no rentals at the moment" : "" %>
   </div>
 </div>
