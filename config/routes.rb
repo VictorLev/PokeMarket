@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
   resources :rentals, only: [:destroy, :update, ]
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Defines search path for later - to search through users as well as pokemon
+  get '/search', to: 'search#search', as: :search
 end

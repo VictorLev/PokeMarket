@@ -5,8 +5,8 @@
   <img class="pokemon-img" src=<%=pokemon.imageUrl%> alt="pokemon image" height="66%">
   <div class="card-gradient-border-content">
     <div class="d-flex flex-column justify-content-center py-2">
-      <p> Element: <%= pokemon.element %></p>
-      <p> Age:<%= pokemon.age %></p>
+      <p> <strong>Element:</strong> <%= pokemon.element %></p>
+      <p> <strong>Age:</strong> <%= pokemon.age %></p>
     </div>
     <div class="card-gradient-border-avatar">
      <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
