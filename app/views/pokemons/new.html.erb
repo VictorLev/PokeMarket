@@ -13,7 +13,9 @@
           </div>
         <% end %>
 
-        <%= f.input :name %>
+        <%= f.input :name do %>
+          <%= f.collection_select :name, Pokemon.all, :id, :name, { prompt: "Select a name" }, { class: "form-control" } %>
+        <% end %>
         <%= f.input :element %>
         <%= f.input :age %>
         <%= f.input :nickname %>
