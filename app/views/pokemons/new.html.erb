@@ -14,7 +14,7 @@
         <% end %>
 
         <%= f.input :name do %>
-        <%= f.collection_select :name, Pokemon.order(:name), :id, :name, { prompt: "Select a name" }, { class: "form-control" } %>
+          <%= f.collection_select :name, Pokemon.order(:name), :name ,:name, { prompt: "Select a name" }, { class: "form-control" } %>
         <% end %>
         <%= f.input :element %>
         <%= f.input :age %>
