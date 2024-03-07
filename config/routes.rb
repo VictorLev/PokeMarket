@@ -9,14 +9,15 @@ Rails.application.routes.draw do
 
   get "/account", to: "pages#account"
   get "/my-pokemon", to: "pages#my_pokemon", as: "my_pokemon"
-  
+  get "/my-rentals", to: "pages#my_rentals", as: "my_rentals"
+
   get '/search', to: 'search#search', as: :search
 
   resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
   end
 
-  resources :rentals, only: [:destroy]
+  resources :rentals, only: [:destroy, :update, ]
 
   # Defines the root path route ("/")
   # root "posts#index"

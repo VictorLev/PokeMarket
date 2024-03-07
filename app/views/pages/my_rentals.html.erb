@@ -1,0 +1,32 @@
+<div class="text-center m-4">
+  <h1><strong>My Rentals</strong></h1>
+</div>
+
+<div class="card-container">
+  <div class="list-group w-100">
+    <% @rentals.each do |rental| %>
+      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "" %>">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <img class="pokemon-img" src=<%=rental.pokemon.imageUrl%> alt="pokemon image">
+            <%= rental.pokemon.name %>
+          </div>
+          <div>
+            status: <%= rental.status %>
+          </div>
+          <div class="d-flex flex-column">
+            <div>
+              From : <%= rental.start_date.strftime("%A, %B %e, %Y") %>
+            </div>
+            <div>
+              To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
+            </div>
+          </div>
+          <div>
+            <%= link_to "Cancel", rental_path(rental), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "btn btn-danger text-white" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

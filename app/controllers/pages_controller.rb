@@ -17,6 +17,10 @@ class PagesController < ApplicationController
   end
 
   def my_pokemon
-    @pokemons = current_user.pokemon
+    @pokemons = current_user.pokemons
+  end
+
+  def my_rentals
+    @rentals = current_user.rentals
   end
 end

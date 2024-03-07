@@ -1,10 +1,10 @@
 class Pokemon < ApplicationRecord
   has_one_attached :photo
   belongs_to :user
-  has_many :rental, dependent: :destroy
+  has_many :rentals, dependent: :destroy
 
   def unavailable_dates
-    self.rental.pluck(:start_date, :end_date).map do |range|
+    self.rentals.pluck(:start_date, :end_date).map do |range|
       { from: range[0], to: range[1] }
     end
   end
