@@ -25,6 +25,12 @@ class RentalsController < ApplicationController
     redirect_to my_rentals_path, status: :see_other
   end
 
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(status: "approved")
+    redirect_to approvals_path, status: :see_other
+  end
+
   private
 
   def set_pokemon

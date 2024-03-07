@@ -1,5 +1,5 @@
 <div class="text-center m-4">
-  <h1><strong>My Rentals</strong></h1>
+  <h1><strong>Approvals</strong></h1>
 </div>
 
 <div class="card-container">
@@ -23,7 +23,7 @@
             </div>
           </div>
           <div>
-            <%= link_to "Cancel", rental_path(rental), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "btn btn-danger text-white" %>
+            <%= link_to "Approve", rental_path(rental), data: { turbo_method: :patch }, class: "btn btn-success text-white" %>
           </div>
         </div>
       </div>

@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   get "/account", to: "pages#account"
   get "/my-pokemon", to: "pages#my_pokemon", as: "my_pokemon"
   get "/my-rentals", to: "pages#my_rentals", as: "my_rentals"
+  get "/approvals", to: "pages#approvals", as: "approvals"
 
   resources :pokemons, only: [:index, :create, :new, :show] do
     resources :rentals, only: [:index, :create, :new]
   end
 
-  resources :rentals, only: [:destroy, :update, ]
+  resources :rentals, only: [:destroy, :update ]
 end

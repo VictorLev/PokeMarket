@@ -1,7 +1,7 @@
 <div class="container">
   <div class="list-group">
     <% pokemon.rentals.each do |rental| %>
-      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "" %>">
+      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "list-group-item-success" %>">
         <%= rental.status %><br/>
         From : <%= rental.start_date.strftime("%A, %B %e, %Y") %><br/>
         To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
