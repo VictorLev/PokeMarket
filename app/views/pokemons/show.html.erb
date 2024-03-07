@@ -1,24 +1,48 @@
 <div class="container">
-  <div class="d-flex justify-content-center ">
-    <div class="card-show w-50">
-      <div class="card-product-infos d-flex justify-content-center">
-        <%= render partial: 'shared/card', locals: { pokemon: @pokemon } %>
-      </div>
-      <div class="p-4">
-        <h2> Rentals </h2>
-        <%= render partial: 'rentals/index', locals: { pokemon: @pokemon } %>
-      </div>
-      <div data-controller="toggle" class="">
-        <div class="d-flex justify-content-center mb-5">
-          <button data-action="click->toggle#fire" class="btn btn-outline-primary">Rent this <%= @pokemon.name %> </button>
-        </div>
-        <div data-toggle-target="togglableElement" class="d-none">
-          <div class="p-4 border rounded-4 my-4">
-            <h2> New Rental </h2>
-            <%= render partial: 'rentals/new', locals: { pokemon: @pokemon } %>
+  <div class="my-4">
+    <div data-controller="toggle" class="">
+      <div class="d-flex flex-column justify-content-center">
+        <% if @pokemon.user == current_user %>
+          <h1 class="text-center"><%= @pokemon.nickname.capitalize %> is one of your cute lovely Pokemons ❤️</h1>
+        <% end %>
+        <div class="card-product-infos d-flex justify-content-center align-items-center">
+          <div>
+
+            <%= render partial: 'shared/card', locals: { pokemon: @pokemon } %>
+            <% if @pokemon.user != current_user %>
+              <div class="d-flex justify-content-center mb-5">
+                <button data-action="click->toggle#fire" class="btn btn-outline-primary">Rent this <%= @pokemon.name %> </button>
+              </div>
+            <% end %>
+          </div>
+          <div class="p-4">
+            <h2 class="pe-4"> Detailed information </h2>
+            <hr/>
+            <div class="list-group">
+              <div class="list-group-item list-group-item-dark fs-3"> Nickname: <%= @pokemon.nickname.capitalize %> </div>
+              <div class="list-group-item"> Pokemon: <%= @pokemon.name.capitalize %> </div>
+              <div class="list-group-item"> Rating: <%= @pokemon.rating %> </div>
+              <div class="list-group-item"> Element: <%= @pokemon.element %> </div>
+              <% if @pokemon.featured %>
+                <div class="list-group-item"> Featured </div>
+              <% end %>
+              <div class="list-group-item"> Coordinates: <%= @pokemon.coordinates %> </div>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="d-flex justify-content-center">
+          <div class="p-4 w-50">
+            <h2> Rentals </h2>
+            <%= render partial: 'rentals/index', locals: { pokemon: @pokemon } %>
+          </div>
+          <div data-toggle-target="togglableElement" class="d-none w-50">
+            <div class="p-4 border rounded-4 my-4">
+              <h2> New Rental </h2>
+              <%= render partial: 'rentals/new', locals: { pokemon: @pokemon } %>
+            </div>
+          </div>
+        </div>
+        </div>
     </div>
   </div>
 </div>

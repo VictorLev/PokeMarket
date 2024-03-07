@@ -6,7 +6,7 @@ class RentalsController < ApplicationController
   end
 
   def new
-    @rental = Rental.new
+    @rental = Rental.new(status: "pending")
   end
 
   def create
