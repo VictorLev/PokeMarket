@@ -1,13 +1,10 @@
 <div class="container">
-  <%# /pokemons/:id/rentals %>
-  <div class="group-list">
+  <div class="list-group">
     <% @rentals.each do |rental| %>
-      <div class="d-flex justify-content-between">
-        <div class="group-list-item">
-          <%= rental.status %>
-          <%= rental.start_date %>
-          <%= rental.end_date %>
-        </div>
+      <div class="list-group-item <%= rental.status == "pending" ? "list-group-item-info" : "" %>">
+        <%= rental.status %><br/>
+        From : <%= rental.start_date.strftime("%A, %B %e, %Y") %><br/>
+        To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
       </div>
     <% end %>
   </div>
