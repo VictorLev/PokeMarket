@@ -3,6 +3,13 @@ class Pokemon < ApplicationRecord
   belongs_to :user
   has_many :rental, dependent: :destroy
 
+  def unavailable_dates
+    self.rental.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
+
+
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :element ],

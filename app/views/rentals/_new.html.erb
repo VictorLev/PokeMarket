@@ -1,11 +1,15 @@
 
-<%= simple_form_for [@pokemon, @rental] do |f| %>
-  <%= f.input :status %>
+<%= simple_form_for [@pokemon, @rental], data: { controller: 'flatpickr' } do |f| %>
+  <div class="widget-content" data-unavailable="<%= @pokemon.unavailable_dates.to_json %>"></div>
+  <%= f.input :status, as: :hidden %>
   <%= f.input :start_date,
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+            label: "Dates", placeholder: "From",
+            input_html: { data: { flatpickr_target: "startTime" } } %>
   <%= f.input :end_date,
             as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit %>
+            label: "",
+            placeholder: "To",
+            input_html: { data: { flatpickr_target: "endTime" } } %>
+  <%= f.submit 'Send your rental request' %>
 <% end %>

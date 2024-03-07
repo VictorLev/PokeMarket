@@ -4,14 +4,12 @@
   <%#= get pokemon image from the API %>
   <img class="pokemon-img" src=<%=pokemon.imageUrl%> alt="pokemon image" height="66%">
   <div class="card-gradient-border-content">
-    <div>
-      <p><strong>Element:</strong> <%= pokemon.element %></p>
-      <p><strong>Age:</strong><%= pokemon.age %></p>
-      <p><strong>Rent: $$ </strong></p>
+    <div class="d-flex flex-column justify-content-center py-2">
+      <p> <strong>Element:</strong> <%= pokemon.element %></p>
+      <p> <strong>Age:</strong> <%= pokemon.age %></p>
     </div>
-    <%#= to render the avatar as an image based on the seed w/ method pokemon.user.img requires an image to be attached to the  user %>
     <div class="card-gradient-border-avatar">
-      <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+     <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
     </div>
   </div>
 </div>
