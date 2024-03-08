@@ -11,9 +11,32 @@
 require "json"
 require "open-uri"
 
-url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
+url = "https://pokeapi.co/api/v2/pokemon/?limit=30"
 pokemon_serialized = URI.open(url).read
 api_return = JSON.parse(pokemon_serialized)
+
+address = ["294 Swan St, Richmond VIC 3121",
+            "Lvl 1/650 Collins St, Docklands VIC 3008",
+            "12/62 Cook St, Port Melbourne VIC 3210",
+            "115-129 Mt Alexander Rd, Flemington VIC 3031",
+            "1/1-3 Cole St, Williamstown VIC 3016",
+            "Brimbank Shopping Centre Cnr Station Rd &, Neale Rd, Deer Park VIC 3023",
+            "154-156 Central Ave, Altona Meadows VIC 3028",
+            "100 South Road Corner of, Hampton St, Hampton VIC 3188",
+            "Stud Rd, Dandenong North VIC 3175",
+            "Ballarto Rd, Frankston North VIC 3200",
+            "Canterbury Rd, Vermont VIC 3133",
+            "Grimshaw St &, Greensborough Rd, Greensborough VIC 3088",
+            "504 Pascoe Vale Rd, Strathmore VIC 3044",
+            "1445/1451 Hume Hwy, Campbellfield VIC 3061",
+            "113 Matthews Ave, Airport West VIC 3042",
+            "401 Moreland Rd, Coburg VIC 3058",
+            "200 Rosamond Rd, Maribyrnong VIC 3032",
+            "360 Canterbury Rd, Surrey Hills VIC 3127",
+            "Canterbury Rd, Vermont VIC 3133",
+            "Grimshaw St &, Greensborough Rd, Greensborough VIC 3088",
+            "231-233 Ferntree Gully Rd, Mount Waverley VIC 3149",
+          ]
 
 User.destroy_all
 Pokemon.destroy_all
@@ -78,7 +101,7 @@ api_return["results"].each do |pokemon|
                   name: pokemon["name"],
                   user: User.all.sample,
                   featured: [true, false].sample,
-                  address: ["Sydney, NSW, Australia", "Melbourne, VIC, Australia", "Brisbane, QLD, Australia"].sample,
+                  address: address.sample,
                   imageUrl: api_return["sprites"]["front_default"]
                   )
 end
