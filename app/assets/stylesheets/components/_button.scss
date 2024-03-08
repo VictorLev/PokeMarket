@@ -1,0 +1,80 @@
+.btn-hero {
+  border-radius: 8px;
+  letter-spacing: 2px;
+  top: -6px;
+  border: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #dedcdc;
+  &.hero {
+    padding: 20px;
+    box-shadow: 0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #bb39d7;
+  }
+  &.warning {
+    padding: 12px;
+    box-shadow: 0 0 0 1px #da0d66 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #da0d66, 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #ff569f;
+  }
+  &.success {
+    padding: 12px;
+    // color: lightgray;
+    box-shadow: 0 0 0 1px #e2d40a inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #e2d40a , 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #fafd2e;
+  }
+  &.primary {
+    padding: 12px;
+    box-shadow: 0 0 0 1px #136ab6 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #136ab6 , 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #3287d2;
+  }
+}
+
+
+.btn-hero:active {
+  top: 2px;
+  &.hero {
+    padding: 20px;
+    box-shadow: 0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #bb39d7;
+  }
+  &.warning {
+    padding: 12px;
+    box-shadow: 0 0 0 1px #da0d66 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #cd4a83;
+  }
+  &.success{
+    padding: 12px;
+    box-shadow: 0 0 0 1px #e2d40a inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #fafd2e;
+  }
+  &.primary{
+    padding: 12px;
+    box-shadow: 0 0 0 1px #136ab6 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    background-color: #3287d2;
+  }
+
+}
+
+
+.btn-hero:hover {
+  opacity: 100%;
+  transition: all 0.5s;
+  &.hero {
+    padding: 20px;
+    background:#c158d8;
+  }
+  &.warning {
+    padding: 12px;
+    background: #cd4a83;
+  }
+  &.success {
+    padding: 12px;
+    background: #fafd2e;
+  }
+  &.primary {
+    padding: 12px;
+    background: #3287d2;
+  }
+}

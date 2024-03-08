@@ -11,7 +11,7 @@
             <%= render partial: 'shared/card', locals: { pokemon: @pokemon } %>
             <% if @pokemon.user != current_user %>
               <div class="d-flex justify-content-center mb-5">
-                <button data-action="click->toggle#fire" class="btn btn-outline-primary">Rent this <%= @pokemon.name %> </button>
+                <button data-action="click->toggle#fire" class="btn btn-hero success">Rent this <%= @pokemon.name %> </button>
               </div>
             <% end %>
           </div>
