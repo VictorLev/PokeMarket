@@ -5,13 +5,14 @@
         <% if @pokemon.user == current_user %>
           <h1 class="text-center"><%= @pokemon.nickname.capitalize %> is one of your cute lovely Pokemons ❤️</h1>
         <% end %>
-        <div class="card-product-infos d-flex justify-content-center align-items-center">
+        <div class="card-product-infos d-flex justify-content-center align-items-top">
           <div>
-
-            <%= render partial: 'shared/card', locals: { pokemon: @pokemon } %>
+            <div style="margin-top: 26px;">
+              <%= render partial: 'shared/card', locals: { pokemon: @pokemon } %>
+            </div>
             <% if @pokemon.user != current_user %>
               <div class="d-flex justify-content-center mb-5">
-                <button data-action="click->toggle#fire" class="btn btn-hero success">Rent this <%= @pokemon.name %> </button>
+                <button data-action="click->toggle#fire" class="btn-hero <%= @pokemon.element %>">Rent this <%= @pokemon.name %> </button>
               </div>
             <% end %>
           </div>
@@ -41,7 +42,4 @@
         </div>
     </div>
   </div>
-  <button>
-    <%= link_to("back", pokemons_path) %>
-  </button>
 </div>
