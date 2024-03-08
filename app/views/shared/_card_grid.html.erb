@@ -2,9 +2,8 @@
   <% @pokemons.each do |pokemon| %>
     <div class="d-flex ">
       <%= link_to pokemon_path(pokemon), class: "decorator-none" do %>
-        <%= render partial: 'shared/card', locals: { pokemon: pokemon } %>
-      <% end %>
-
+      <%= render partial: 'shared/card', locals: { pokemon: pokemon } %>
+  <% end %>
         <% if controller_name == 'pages' && action_name == 'my_pokemon' %>
           <div class="p-4">
             <h4> Rentals </h4>

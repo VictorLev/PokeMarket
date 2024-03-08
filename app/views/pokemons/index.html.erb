@@ -1,14 +1,13 @@
 <%#= requires cloudinary gem for an image to be attached to the  user %>
 <div class="text-center m-4">
   <h1><strong>PokeDeck</strong></h1>
+    <%= render partial: 'search_bar', locals: { pokemons: @pokemons } %>
 </div>
-
-<div class="card-container row">
+<div class="row">
   <div class="col-6">
     <%= render partial: 'search_index', locals: { pokemons: @pokemons } %>
   </div>
   <div class="col-6">
-
     <div class="sticky-top pt-4">
       <div class="container">
         <div style="width: 100%; height: 600px;"
@@ -17,6 +16,7 @@
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
+
     </div>
 
   </div>

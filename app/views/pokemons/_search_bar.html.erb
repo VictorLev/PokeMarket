@@ -1,0 +1,12 @@
+<div class="row justify-content-center">
+  <div class="col-sm-12 my-3">
+    <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search for pokemon..."
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-hero hero" %>
+    <% end %>
+  </div>
+</div>
