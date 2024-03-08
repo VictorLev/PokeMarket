@@ -27,7 +27,7 @@
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar mx-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag current_user.imageUrl , class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "#{current_user.imageUrl}.jpg" , class: "avatar", alt: "dropdown menu" %>
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Account details", account_path, class: "dropdown-item" %>

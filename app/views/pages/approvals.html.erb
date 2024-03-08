@@ -24,7 +24,7 @@
           </div>
           <div class="position-relative">
             Renter:
-            <%=  image_tag rental.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+            <%=  image_tag "#{rental.user.imageUrl}.jpg" , class: "avatar", alt: "user avatar"  %>
             <span class="username"><%= rental.user.username  %></span>
           </div>
           <div>
