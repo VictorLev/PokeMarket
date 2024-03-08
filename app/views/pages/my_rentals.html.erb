@@ -22,6 +22,11 @@
               To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
             </div>
           </div>
+          <div class="position-relative">
+            Owner:
+            <%=  image_tag rental.pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+            <span class="username"><%= rental.pokemon.user.username  %></span>
+          </div>
           <div>
             <%= link_to "Cancel", rental_path(rental), data: { turbo_method: :delete, confirm: "Are you sure?" }, class: "btn btn-danger text-white" %>
           </div>
