@@ -12,7 +12,9 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/emsto/cltguvvtv00wv01ra5u53b2mk/draft"
+      // style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/stylingmaps/clthv2fxu00lt01r5fyl927va"
+      // style: "mapbox.com/styles/v1/stylingmaps/clthv2fxu00lt01r5fyl927va.html?title=view&access_token=pk.eyJ1Ijoic3R5bGluZ21hcHMiLCJhIjoiY2x0aHR6cGhqMDkxZjJxcnI4OGkzMTQ0cSJ9.PGiIVYk0RQ2a5dwSUtR7kA&zoomwheel=true&fresh=true#15.02/-37.77344/145.08003"
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
