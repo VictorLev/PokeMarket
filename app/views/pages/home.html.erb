@@ -1,36 +1,22 @@
 <div>
-<%= render partial: 'billboard', locals: { pokemons: @pokemons } %>
+  <%= render partial: 'billboard', locals: { pokemons: @pokemons } %>
 
-<div class="container">
   <div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search for available pokemon"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-hero hero" %>
-    <% end %>
+    <div class="col-sm-8 my-3">
+      <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Search for available pokemon"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-hero hero" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="featured container">
+    <h1>Featured Pokemon</h1>
+  </div>
+  <div class="container" style="margin-top: 24px;">
+    <%= render partial: 'search', locals: { pokemons: @pokemons } %>
   </div>
 </div>
-
-<div class="featured container">
-  <h1>Featured Pokemon</h1>
-</div>
-
-
-<%#= render partial: 'shared/card_grid', locals: { pokemons: @pokemons } %>
-<div class="cotnainter" style="margin-top: 24px;">
-  <%= render partial: 'search', locals: { pokemons: @pokemons } %>
-</div>
-
-
-
-</div>
-
-
-
-<%# <div class="card-container">
-  <%= render partial: 'card_grid', locals: { pokemons: @pokemons } %>
-<%# </div> %>
