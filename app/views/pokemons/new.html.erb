@@ -16,8 +16,13 @@
         <%= f.input :name do %>
           <%= f.collection_select :name, Pokemon.order(:name), :name ,:name, { prompt: "Select a name" }, { class: "form-control" } %>
         <% end %>
-        <%= f.input :element %>
+        <%= f.input :element do %>
+        <%= f.collection_select :element, ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"], :to_s, :to_s, { prompt: "Select an element" }, { class: "form-control" } %>
+        <% end %>
         <%= f.input :age %>
+        <%= f.input :address, input_html: {data: {address_autocomplete_target: "address"}},
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+        %>
         <%= f.input :nickname %>
         <%= f.input :rating, placeholder: "write a rating between 0 and 5" %>
         <%= f.button :submit, "Create", class: "btn btn-hero success" %>
