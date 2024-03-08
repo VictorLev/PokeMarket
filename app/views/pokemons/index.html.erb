@@ -8,10 +8,16 @@
     <%= render partial: 'search_index', locals: { pokemons: @pokemons } %>
   </div>
   <div class="col-6">
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+    <div class="sticky-top pt-4">
+      <div class="container">
+        <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
