@@ -15,8 +15,8 @@ url = "https://pokeapi.co/api/v2/pokemon/?limit=100"
 pokemon_serialized = URI.open(url).read
 api_return = JSON.parse(pokemon_serialized)
 
-User.destroy_all if Rails.env.development?
-Pokemon.destroy_all if Rails.env.development?
+User.destroy_all
+Pokemon.destroy_all
 
 User.create!(username: "Ash",
               hometown: "Pallet Town",

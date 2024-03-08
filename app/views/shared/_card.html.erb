@@ -9,7 +9,8 @@
       <p> <strong>Age:</strong> <%= pokemon.age %></p>
     </div>
     <div class="card-gradient-border-avatar">
-     <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+      <%=  image_tag pokemon.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+      <span class="username"><%= pokemon.user.username  %></span>
     </div>
   </div>
 </div>
