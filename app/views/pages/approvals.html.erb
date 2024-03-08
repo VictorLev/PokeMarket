@@ -22,8 +22,13 @@
               To : <%= rental.end_date.strftime("%A, %B %e, %Y") %>
             </div>
           </div>
+          <div class="position-relative">
+            Renter:
+            <%=  image_tag rental.user.imageUrl , class: "avatar", alt: "user avatar"  %>
+            <span class="username"><%= rental.user.username  %></span>
+          </div>
           <div>
-            <%= link_to "Approve", rental_path(rental), data: { turbo_method: :patch }, class: "btn btn-success text-white" %>
+            <%= link_to "Approve", rental_path(rental), data: { turbo_method: :patch }, class: "btn btn-hero success" %>
           </div>
         </div>
       </div>
